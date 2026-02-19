@@ -17,7 +17,7 @@ internal class ElementPatcher
                     ? 2.0 - (amount - 1) * (1.0 / 499.0) // 1..500: 2.0 -> 1.0
                     : 1.0 - (amount - 500) * (0.5 / 499.0); // 500..999: 1.0 -> 0.5
 
-        return (int)Math.Round(cost * factor, MidpointRounding.AwayFromZero);
+        return Math.Max(1, (int)(cost * factor));
     }
 
     [HarmonyPostfix]

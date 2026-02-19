@@ -15,7 +15,7 @@ public class RaceNineTailFox : BaseNTFRaceRow
         name = "★九尾狐";
         name_JP = "★九尾の狐";
         tag = ["god", "humanSpeak", "mofu"];
-        life = 100;
+        life = 33;
         mana = 200;
         vigor = 100;
         SPD = 200;
