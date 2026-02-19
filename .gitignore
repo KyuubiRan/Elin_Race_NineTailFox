@@ -1,0 +1,12 @@
+bin/
+obj/
+
+.vscode/
+.idea/
+.vs/
+
+.DS_Store
+Thumbs.db
+
+Directory.Build.props
+Folder.DotSettings.user
