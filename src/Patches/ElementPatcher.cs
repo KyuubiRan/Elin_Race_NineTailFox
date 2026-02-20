@@ -9,13 +9,49 @@ internal class ElementPatcher
 {
     private static int CalcCost(int cost, int amount)
     {
-        var factor = amount <= 1
-            ? 2.0
-            : amount >= 999
-                ? 0.5
-                : amount <= 500
-                    ? 2.0 - (amount - 1) * (1.0 / 499.0) // 1..500: 2.0 -> 1.0
-                    : 1.0 - (amount - 500) * (0.5 / 499.0); // 500..999: 1.0 -> 0.5
+        const int minAmount = 1;
+        const int midAmount = 500;
+        const int maxAmount = 999;
+
+        const double maxFactor = 2.0;
+        const double midFactor = 1.0;
+        const double minFactor = 0.5;
+        
+        double factor;
+
+        switch (amount)
+        {
+            case <= minAmount:
+                factor = maxFactor;
+                break;
+            case >= maxAmount:
+                factor = minFactor;
+                break;
+            case <= midAmount:
+            {
+                var t = (double)(amount - minAmount) / (midAmount - minAmount);
+                factor = maxFactor + (midFactor - maxFactor) * t;
+                break;
+            }
+            default:
+            {
+                var t = (double)(amount - midAmount) / (maxAmount - midAmount);
+                factor = midFactor + (minFactor - midFactor) * t;
+                break;
+            }
+        }
+        
+        const int costThreshold = 10;
+        const int costStep = 10;
+        const double shrinkPerStep = 0.05; // 每档收缩 5% 的偏离距离
+        const int maxShrinkSteps = 5;      // 最多 5 档 → 最大收缩 25%
+
+        if (cost >= costThreshold)
+        {
+            var steps = Math.Min(cost / costStep, maxShrinkSteps); // 10→1, 20→2, 30→3, 40→4, ≥50→5
+            var shrinkRate = steps * shrinkPerStep;
+            factor = midFactor + (factor - midFactor) * (1.0 - shrinkRate);
+        }
 
         return Math.Max(1, (int)(cost * factor));
     }
