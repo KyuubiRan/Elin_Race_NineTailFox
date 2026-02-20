@@ -29,6 +29,8 @@ public class JobNineTailFox : BaseNTFJobRow
             ENC.r_life, -36, // life bonus ratio
             ENC.r_mana, +33, // mana bonus ratio
 
+            SKILL.travel, +9, // travel
+            SKILL.negotiation, +9, // negotiation
             SKILL.weaponSword, +3, // sword
             SKILL.weaponStaff, +9, // staff
             SKILL.casting, +9, // casting

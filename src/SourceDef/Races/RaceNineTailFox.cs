@@ -30,6 +30,8 @@ public class RaceNineTailFox : BaseNTFRaceRow
         height = 160;
         breeder = 100;
         EQ = ["all"];
+        loot = ["tail_fox", "10"];
+        food = ["120"];
         elements =
         [
             AbilityMagicShield.Instance.id, 1, // magic shield
@@ -48,6 +50,8 @@ public class RaceNineTailFox : BaseNTFRaceRow
             FEAT.featRoran, +1, // roran
             FEAT.featElder, +1, // elder
 
+            SKILL.travel, +9, // travel
+            SKILL.negotiation, +9, // negotiation
             SKILL.weaponSword, +6, // sword
             SKILL.weaponStaff, +9, // staff
             SKILL.reading, +9, // reading
