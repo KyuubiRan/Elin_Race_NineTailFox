@@ -72,7 +72,9 @@ internal class ElementPatcher
 
         if (__result.type == Act.CostType.MP)
         {
-            __result.cost = CalcCost(__result.cost, spell.Value);
+            var after = CalcCost(__result.cost, spell.vPotential + spell.Value / 10);
+            // Plugin.LogInfo("Original MP Cost: " + __result.cost + ", After MP Cost: " + after + " Amount = " + spell.vPotential);
+            __result.cost = after;
         }
     }
 
@@ -91,7 +93,7 @@ internal class ElementPatcher
 
         if (__result <= 0)
             return;
-        
+
         var mod = Math.Max(1, chara.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 0) * 0.11;
         long r = __result;
         r += (int)(r * mod);

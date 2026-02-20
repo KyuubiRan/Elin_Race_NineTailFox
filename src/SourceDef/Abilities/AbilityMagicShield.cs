@@ -21,9 +21,9 @@ public class AbilityMagicShield : BaseNTFElementRow
         group = "ABILITY";
         category = "ability";
         categorySub = "ability";
-        tag = ["noRandomAbility", "specialAbility"];
-        detail = "（独有能力）使用魔力来抵消伤害，等级越高消耗的魔力越少。";
-        detail_JP = "『ユニークアビリティ』魔力を消費してダメージを軽減する。レベルが高いほど消費する魔力が少なくなる。";
+        tag = [];
+        detail = "使用魔力来抵消伤害，等级越高消耗的魔力越少。";
+        detail_JP = "魔力を消費してダメージを軽減する。レベルが高いほど消費する魔力が少なくなる。";
         textExtra = "受到任意类型伤害时，消耗魔力抵消伤害。";
         textExtra_JP = "あらゆるタイプのダメージを受けると、魔力を消費してダメージを軽減する。";
     }
