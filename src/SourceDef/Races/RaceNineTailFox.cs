@@ -43,6 +43,7 @@ public class RaceNineTailFox : BaseNTFRaceRow
 
             FeatNineTailFox.Instance.id, +5, // nine tail fox feat
             FEAT.featAnimalLover, +1, // animal lover
+            FEAT.featMAG, +3, // magic
             FEAT.featManaBond, +9, // mana bond
             FEAT.featManaPrecision, +9, // mana precision
             FEAT.featFastLearner, +3, // fast learner
