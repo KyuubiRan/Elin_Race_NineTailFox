@@ -14,43 +14,52 @@ public class JobNineTailFox : BaseNTFJobRow
 
         equip = "mage";
         weapon = ["sword", "staff"];
-        
+
+        STR = 3;
+        END = 3;
         DEX = 9;
         PER = 9;
         LER = 9;
         WIL = 9;
         MAG = 9;
         CHA = 9;
-        
+
         elements =
         [
-            FeatNineTailFox.Instance.id, +4, // nine tail fox feat
+            FeatNineTailFox.Instance.id, +3, // nine tail fox feat
 
-            ENC.r_life, -36, // life bonus ratio
+            ENC.r_life, -27, // life bonus ratio
             ENC.r_mana, +33, // mana bonus ratio
 
-            SKILL.travel, +9, // travel
+            FEAT.featManaBond, +3,
+            FEAT.featManaPrecision, +3,
+            FEAT.featFoxLearn, +3,
             SKILL.negotiation, +9, // negotiation
             SKILL.weaponSword, +3, // sword
             SKILL.weaponStaff, +9, // staff
+            SKILL.controlmana, +9, // control mana
+            SKILL.manaCapacity, +9, // mana capacity
             SKILL.casting, +9, // casting
             SKILL.reading, +9, // reading
             SKILL.magicDevice, +9, // magic device
             SKILL.meditation, +9, // meditation
             SKILL.appraising, +9, // appraising
             SKILL.memorization, +9, // memorization
+            
+            SKILL.resFire, +3, // fire resistance
+            SKILL.resCold, +3, // ice resistance
         ];
-        
+
         domain =
         [
             SKILL.eleMagic,
-            
+
             SKILL.eleNether,
             SKILL.eleHoly,
-            
+
             SKILL.eleChaos,
             SKILL.eleEther,
-            
+
             SKILL.eleFire,
             SKILL.eleCold,
             SKILL.eleLightning,

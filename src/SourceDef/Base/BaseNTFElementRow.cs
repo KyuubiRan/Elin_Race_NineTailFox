@@ -18,7 +18,7 @@ public abstract class BaseNTFElementRow : SourceElement.Row
         aliasRef = "";
         aliasMtp = "";
         encSlot = "";
-        cost = [];
+        cost = [0];
         target = "";
         proc = [];
         group = "";

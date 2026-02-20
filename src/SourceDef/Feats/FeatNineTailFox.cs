@@ -1,4 +1,5 @@
-﻿using NineTailFox.SourceDef.Base;
+﻿using NineTailFox.Impl.Feats;
+using NineTailFox.SourceDef.Base;
 
 namespace NineTailFox.SourceDef.Feats;
 
@@ -6,7 +7,7 @@ public class FeatNineTailFox : BaseNTFFeatRow
 {
     public static readonly FeatNineTailFox Instance = new();
 
-    public FeatNineTailFox() : base(9999_9999, "featNineTailFox")
+    public FeatNineTailFox() : base(9999_9999, "featNineTailFox", typeof(FtNineTailFox))
     {
         name = "九尾狐";
         name_JP = "九尾の狐";
@@ -16,6 +17,7 @@ public class FeatNineTailFox : BaseNTFFeatRow
         max = 9;
         cost = [99999];
         tag = ["innate"];
+
         detail = """
                  你是九尾狐，拥有强大的魔法力，正因如此：
                  * 你的生命力倍率变得极低，但是你的玛那倍率极高。
@@ -38,7 +40,7 @@ public class FeatNineTailFox : BaseNTFFeatRow
         textPhase = "你是九尾狐！";
         textExtra_JP = "あなたは九尾の狐だ！";
 
-        textExtra = "HP--,MANA++";
-        textExtra_JP = "HP--,MANA++";
+        textExtra = "尾大，无需多言！";
+        textExtra_JP = "九尾の加護！";
     }
 }

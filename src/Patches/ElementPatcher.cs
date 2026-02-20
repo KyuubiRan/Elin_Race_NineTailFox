@@ -44,12 +44,12 @@ internal class ElementPatcher
 
         const int costThreshold = 10;
         const int costStep = 10;
-        const double shrinkPerStep = 0.05; // 每档收缩 5% 的偏离距离
-        const int maxShrinkSteps = 5; // 最多 5 档 → 最大收缩 25%
+        const double shrinkPerStep = 0.05;
+        const int maxShrinkSteps = 5;
 
         if (cost >= costThreshold)
         {
-            var steps = Math.Min(cost / costStep, maxShrinkSteps); // 10→1, 20→2, 30→3, 40→4, ≥50→5
+            var steps = Math.Min(cost / costStep, maxShrinkSteps);
             var shrinkRate = steps * shrinkPerStep;
             factor = midFactor + (factor - midFactor) * (1.0 - shrinkRate);
         }
@@ -72,7 +72,7 @@ internal class ElementPatcher
 
         if (__result.type == Act.CostType.MP)
         {
-            var after = CalcCost(__result.cost, spell.vPotential + spell.Value / 10);
+            var after = CalcCost(__result.cost, spell.vPotential + spell.Value / 9);
             // Plugin.LogInfo("Original MP Cost: " + __result.cost + ", After MP Cost: " + after + " Amount = " + spell.vPotential);
             __result.cost = after;
         }
@@ -91,12 +91,15 @@ internal class ElementPatcher
         if (chara.race.id != RaceNineTailFox.Instance.id)
             return;
 
+        if (__instance is not Spell)
+            return;
+
         if (__result <= 0)
             return;
 
         var mod = Math.Max(1, chara.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 0) * 0.11;
         long r = __result;
-        r += (int)(r * mod);
+        r += (long)(r * mod);
 
         __result = (int)Math.Min(r, int.MaxValue);
     }

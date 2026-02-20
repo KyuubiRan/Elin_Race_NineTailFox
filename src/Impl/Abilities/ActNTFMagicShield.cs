@@ -10,11 +10,10 @@ public class ActNTFMagicShield : Ability
     public override bool Perform()
     {
         if (TC?.Chara == null) return false;
-        if (!CC.IsPC) return false;
         if (!RaceNineTailFox.PcRaceIsCurrent) return false;
 
         var chara = TC.Chara;
-        
+
 //         Plugin.Log.LogInfo(
 //             $"""
 //             vBase: {vBase}
