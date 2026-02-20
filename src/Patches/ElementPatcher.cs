@@ -1,5 +1,6 @@
 ﻿using System;
 using HarmonyLib;
+using NineTailFox.SourceDef.Feats;
 using NineTailFox.SourceDef.Races;
 
 namespace NineTailFox.Patches;
@@ -16,7 +17,7 @@ internal class ElementPatcher
         const double maxFactor = 2.0;
         const double midFactor = 1.0;
         const double minFactor = 0.5;
-        
+
         double factor;
 
         switch (amount)
@@ -40,11 +41,11 @@ internal class ElementPatcher
                 break;
             }
         }
-        
+
         const int costThreshold = 10;
         const int costStep = 10;
         const double shrinkPerStep = 0.05; // 每档收缩 5% 的偏离距离
-        const int maxShrinkSteps = 5;      // 最多 5 档 → 最大收缩 25%
+        const int maxShrinkSteps = 5; // 最多 5 档 → 最大收缩 25%
 
         if (cost >= costThreshold)
         {
@@ -90,9 +91,10 @@ internal class ElementPatcher
 
         if (__result <= 0)
             return;
-
+        
+        var mod = Math.Max(1, chara.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 0) * 0.11;
         long r = __result;
-        r += (int)(r * 0.99f);
+        r += (int)(r * mod);
 
         __result = (int)Math.Min(r, int.MaxValue);
     }

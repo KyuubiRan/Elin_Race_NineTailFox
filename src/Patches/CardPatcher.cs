@@ -2,6 +2,7 @@
 using HarmonyLib;
 using NineTailFox.Impl.Stances;
 using NineTailFox.SourceDef.Abilities;
+using NineTailFox.SourceDef.Feats;
 using NineTailFox.SourceDef.Races;
 
 namespace NineTailFox.Patches;
@@ -50,24 +51,29 @@ public class CardPatcher
         if (charMana <= 0)
             return;
 
-        var lvl = ab.vBase;
+        var lvl = ab.Value;
+
+        var mod = Math.Max(1, c.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 0);
 
         // lvl <= 1: 0.5 damage/mana
         // lvl = 50: 1.0 damage/mana
         // lvl >= 100: 2.0 damage/mana
         var damageReducePerMana =
-            lvl <= 1 ? 0.5f :
-            lvl >= 100 ? 2.0f :
-            0.5f + (lvl - 1) * (1.5f / 99f);
-
+            lvl <= 1 ? 0.5 :
+            lvl >= 100 ? 2.0 :
+            0.5 + (lvl - 1) * (1.5 / 99);
+        damageReducePerMana *= 1 + mod * 0.09; // 每级mod增加9%效率
+        
         var manaToUse = Math.Max(1, (int)Math.Round(dmg / damageReducePerMana));
         if (manaToUse > charMana)
             manaToUse = charMana;
 
         var damageReduce = (int)(manaToUse * damageReducePerMana);
         dmg -= damageReduce;
+
         c.mana.value -= manaToUse;
-        c.elements.ModExp(ab.id, manaToUse);
-        // Plugin.Log.LogInfo("MS mod exp: +" + manaToUse + ", exp: " + ab.vExp + ",  lvl: " + ab.vBase + ", next lvl exp: " + ab.ExpToNext);
+        var modExp = manaToUse * mod;
+        c.elements.ModExp(ab.id, modExp);
+        // Plugin.LogInfo("MS mod exp: +" + modExp + ", exp: " + ab.vExp + ",  base lvl: " + ab.vBase + ", next lvl exp: " + ab.ExpToNext);
     }
 }

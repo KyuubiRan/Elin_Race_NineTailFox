@@ -5,6 +5,8 @@ namespace NineTailFox.Impl.Abilities;
 
 public class ActNTFMagicShield : Ability
 {
+    public override int ExpToNext => 1000 + vBase * 500;
+
     public override bool Perform()
     {
         if (TC?.Chara == null) return false;

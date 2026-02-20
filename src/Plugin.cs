@@ -5,9 +5,9 @@ using HarmonyLib;
 namespace NineTailFox;
 
 [BepInPlugin(Constants.ModId, Constants.ModName, Constants.ModVersion)]
-public class Plugin : BaseUnityPlugin
+internal class Plugin : BaseUnityPlugin
 {
-    public static ManualLogSource Log;
+    internal static ManualLogSource Log;
 
     private void Awake()
     {
@@ -15,5 +15,15 @@ public class Plugin : BaseUnityPlugin
 
         var harmony = new Harmony(Constants.ModId);
         harmony.PatchAll();
+    }
+
+    internal static void LogInfo(string msg)
+    {
+        Log.LogInfo(msg);
+    }
+    
+    internal static void LogInfo(string msg, params object[] args)
+    {
+        Log.LogInfo(string.Format(msg, args));
     }
 }
