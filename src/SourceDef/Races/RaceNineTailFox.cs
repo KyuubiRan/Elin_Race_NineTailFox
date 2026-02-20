@@ -42,6 +42,7 @@ public class RaceNineTailFox : BaseNTFRaceRow
             ENC.meleeDistance, +1, // melee distance
 
             FeatNineTailFox.Instance.id, +5, // nine tail fox feat
+            FEAT.featAnimalLover, +1, // animal lover
             FEAT.featManaBond, +9, // mana bond
             FEAT.featManaPrecision, +9, // mana precision
             FEAT.featFastLearner, +3, // fast learner
