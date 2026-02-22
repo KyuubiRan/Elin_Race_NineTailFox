@@ -18,11 +18,11 @@ public abstract class BaseNTFStatRow : SourceStat.Row
         this.alias = alias;
         this.type = type?.FullName;
         
-        _tName = new TranslatedText($"stat.{id}.name", x => name = x);
+        _tName = new TranslatedText($"stat.{alias}.name", x => name = x);
         name_JP = _tName.Value_JP;
         name = _tName.Value;
         
-        _tDetail = new TranslatedText($"stat.{id}.detail", x => detail = x);
+        _tDetail = new TranslatedText($"stat.{alias}.detail", x => detail = x);
         detail_JP = _tDetail.Value_JP;
         detail = _tDetail.Value;
     
@@ -41,15 +41,15 @@ public abstract class BaseNTFStatRow : SourceStat.Row
         strPhase_JP = [];
         strPhase = [];
         
-        _tTextPhase = new TranslatedText($"stat.{id}.textPhase", x => textPhase = x);
+        _tTextPhase = new TranslatedText($"stat.{alias}.textPhase", x => textPhase = x);
         textPhase_JP = _tTextPhase.Value_JP;
         textPhase = _tTextPhase.Value;
    
-        _tTextEnd = new TranslatedText($"stat.{id}.textEnd", x => textEnd = x);
+        _tTextEnd = new TranslatedText($"stat.{alias}.textEnd", x => textEnd = x);
         textEnd_JP = _tTextEnd.Value_JP;
         textEnd = _tTextEnd.Value;
    
-        _tTextPhase2 = new TranslatedText($"stat.{id}.textPhase2", x => textPhase2 = x);
+        _tTextPhase2 = new TranslatedText($"stat.{alias}.textPhase2", x => textPhase2 = x);
         textPhase2_JP = _tTextPhase2.Value_JP;
         textPhase2 = _tTextPhase2.Value;
     

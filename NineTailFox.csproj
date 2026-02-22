@@ -86,7 +86,7 @@
 
     <ItemGroup>
       <None Remove="assets\language.json" />
-      <OriginalXamlResource Include="assets\language.json" />
+      <EmbeddedResource Include="assets\language.json" />
     </ItemGroup>
 
 
