@@ -53,7 +53,7 @@ public class CardPatcher
 
         var lvl = ab.Value;
 
-        var mod = Math.Max(1, c.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 0);
+        var mod = Math.Max(1, c.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 1);
 
         // lvl <= 1: 0.5 damage/mana
         // lvl = 50: 1.0 damage/mana
@@ -64,11 +64,11 @@ public class CardPatcher
             0.5 + (lvl - 1) * (1.5 / 99);
         damageReducePerMana *= 1 + mod * 0.09; // 每级mod增加9%效率
         
-        var manaToUse = Math.Max(1, (int)Math.Round(dmg / damageReducePerMana));
+        var manaToUse = Math.Max(1, (int)Math.Ceiling(dmg / damageReducePerMana));
         if (manaToUse > charMana)
             manaToUse = charMana;
 
-        var damageReduce = (int)(manaToUse * damageReducePerMana);
+        var damageReduce = (long)(manaToUse * damageReducePerMana);
         dmg -= damageReduce;
 
         c.mana.value -= manaToUse;
