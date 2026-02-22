@@ -38,7 +38,7 @@ public class FeatNineTailFox : BaseNTFFeatRow
                     """;
 
         textPhase = "你是九尾狐！";
-        textExtra_JP = "あなたは九尾の狐だ！";
+        textPhase_JP = "あなたは九尾の狐だ！";
 
         textExtra = "尾大，无需多言！";
         textExtra_JP = "九尾の加護！";
