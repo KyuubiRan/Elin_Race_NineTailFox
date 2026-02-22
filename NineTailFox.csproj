@@ -65,6 +65,30 @@
         <TextureFiles Include="Texture\**\*.*"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Update="ModRes.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ModRes.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="ModRes.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ModRes.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="src\Utils\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="assets\language.json" />
+      <OriginalXamlResource Include="assets\language.json" />
+    </ItemGroup>
+
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <PropertyGroup>

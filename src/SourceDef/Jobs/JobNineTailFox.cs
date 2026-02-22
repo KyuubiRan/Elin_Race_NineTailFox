@@ -9,9 +9,6 @@ public class JobNineTailFox : BaseNTFJobRow
 
     public JobNineTailFox() : base("JobNineTailFox")
     {
-        name = "★九尾狐";
-        name_JP = "★九尾の狐";
-
         equip = "mage";
         weapon = ["sword", "staff"];
 
@@ -64,8 +61,5 @@ public class JobNineTailFox : BaseNTFJobRow
             SKILL.eleCold,
             SKILL.eleLightning,
         ];
-
-        detail = "从异世界穿越而来的九尾狐，拥有强大的魔法力，但是代价是。。。";
-        detail_JP = "異世界からやってきた九尾の狐。強力な魔法の力を持つが、その代償は。。。";
     }
 }

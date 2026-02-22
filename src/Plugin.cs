@@ -17,13 +17,18 @@ internal class Plugin : BaseUnityPlugin
         harmony.PatchAll();
     }
 
-    internal static void LogInfo(string msg)
-    {
-        Log.LogInfo(msg);
-    }
-    
     internal static void LogInfo(string msg, params object[] args)
     {
         Log.LogInfo(string.Format(msg, args));
+    }
+
+    internal static void LogWarning(string msg, params object[] args)
+    {
+        Log.LogWarning(string.Format(msg, args));
+    }
+
+    internal static void LogError(string msg, params object[] args)
+    {
+        Log.LogError(string.Format(msg, args));
     }
 }

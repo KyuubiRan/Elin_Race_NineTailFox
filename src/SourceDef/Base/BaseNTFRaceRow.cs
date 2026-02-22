@@ -1,13 +1,25 @@
-﻿namespace NineTailFox.SourceDef.Base;
+﻿using NineTailFox.I18n;
+
+namespace NineTailFox.SourceDef.Base;
 
 public abstract class BaseNTFRaceRow : SourceRace.Row
 {
+    private TranslatedText _tName;
+    private TranslatedText _tDetail;
+
     protected BaseNTFRaceRow(string id, int playable = 1)
     {
         this.id = id;
         this.playable = playable;
-        name_JP = "";
-        name = "";
+
+        _tName = new TranslatedText($"race.{id}.name", x => name = x);
+        name_JP = _tName.Value_JP;
+        name = _tName.Value;
+
+        _tDetail = new TranslatedText($"race.{id}.detail", x => detail = x);
+        detail_JP = _tDetail.Value_JP;
+        detail = _tDetail.Value;
+
         vigor = 100;
         DV = 0;
         PV = 0;
@@ -27,7 +39,5 @@ public abstract class BaseNTFRaceRow : SourceRace.Row
         breeder = 100;
         food = ["100"];
         fur = "";
-        detail_JP = "";
-        detail = "";
     }
 }

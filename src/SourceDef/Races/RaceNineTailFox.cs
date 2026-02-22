@@ -1,5 +1,4 @@
-﻿using NineTailFox.SourceDef.Abilities;
-using NineTailFox.SourceDef.Base;
+﻿using NineTailFox.SourceDef.Base;
 using NineTailFox.SourceDef.Feats;
 
 namespace NineTailFox.SourceDef.Races;
@@ -63,7 +62,5 @@ public class RaceNineTailFox : BaseNTFRaceRow
         age = [999, 999];
         figure = "頭|首|体|背|手|手|指|指|腕|腰|脚|足|";
         geneCap = 9;
-        detail = "从异世界穿越而来的九尾狐，拥有强大的魔法力，但是代价是。。。";
-        detail_JP = "異世界からやってきた九尾の狐。強力な魔法の力を持つが、その代償は。。。";
     }
 }

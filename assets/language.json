@@ -1,0 +1,67 @@
+{
+  "race.RaceNineTailFox.name": {
+    "cn": "★九尾狐",
+    "jp": "★九尾の狐",
+    "en": "★ Nine Tail Fox"
+  },
+  "race.RaceNineTailFox.detail": {
+    "cn": "从异世界穿越而来的九尾狐，拥有强大的魔法力，但是代价是。。。",
+    "jp": "異世界からやってきた九尾の狐。強力な魔法の力を持っているが、その代償は…",
+    "en": "Nine Tail Fox from another world, has powerful magical power, but the price is..."
+  },
+  "job.JobNineTailFox.name": {
+    "cn": "★九尾狐",
+    "jp": "★九尾の狐",
+    "en": "★ Nine Tail Fox"
+  },
+  "job.JobNineTailFox.detail": {
+    "cn": "从异世界穿越而来的九尾狐，拥有强大的魔法力，但是代价是。。。",
+    "jp": "異世界からやってきた九尾の狐。強力な魔法の力を持っているが、その代償は…",
+    "en": "Nine Tail Fox from another world, has powerful magical power, but the price is..."
+  },
+  "element.FeatNineTailFox.name": {
+    "cn": "九尾狐",
+    "jp": "九尾の狐",
+    "en": "Nine Tail Fox"
+  },
+  "element.FeatNineTailFox.detail": {
+    "cn": "你是九尾狐，拥有强大的魔法力，正因如此：\n* 你的生命力倍率变得极低，但是你的玛那倍率极高。\n* 你的魔法永远不会枯竭，但是在存量较低时会增加魔力消耗。\n* 你能造成更高的魔法伤害。\n* 你拥有使用魔力抵消伤害的能力。\n* 你对火焰和寒冷的抗性增加。\n* 你拥有很高的阅历。",
+    "jp": "あなたは九尾の狐であり、強力な魔法の力を持っています。そのため：\n* あなたの生命力倍率は非常に低くなりますが、マナ倍率は非常に高くなります。\n* あなたの魔力は決して枯渇しませんが、残量が少ないときは魔力消費が増加します。\n* あなたはより高い魔法ダメージを与えることができます。\n* あなたは魔力を消費してダメージを軽減する能力を持っています。\n* あなたの火と氷に対する耐性が増加します。\n* あなたは非常に豊富な経験をお持ちです。",
+    "en": "You are a Nine Tail Fox, possessing powerful magical power, and because of that:\n* Your HP multiplier becomes extremely low, but your Mana multiplier becomes extremely high.\n* Your magic will never run out, but when the amount is low, it will increase mana consumption.\n* You can deal higher magic damage.\n* You have the ability to use mana to offset damage.\n* Your resistance to fire and cold increases.\n* You have very high experience."
+  },
+  "element.FeatNineTailFox.textPhase": {
+    "cn": "你是九尾狐！",
+    "jp": "あなたは九尾の狐だ！",
+    "en": "You are a Nine Tail Fox!"
+  },
+  "element.FeatNineTailFox.textExtra": {
+    "cn": "尾大，无需多言！",
+    "jp": "九尾の加護！",
+    "en": "Nine Tail's Blessing!"
+  },
+  "element.ActNTFMagicShield.name": {
+    "cn": "魔力护盾",
+    "jp": "マジックシールド",
+    "en": "Magic Shield"
+  },
+  "element.ActNTFMagicShield.detail": {
+    "cn": "九尾狐族的秘术，利用魔力凝聚能够保护自身的不可见护盾。",
+    "jp": "九尾の狐族の秘術で、魔力を利用して自身を守ることができる見えないシールドを凝縮します。",
+    "en": "A secret technique of the Nine Tail Fox tribe, using mana to condense an invisible shield that can protect itself."
+  },
+  "element.ActNTFMagicShield.textExtra": {
+    "cn": "以玛那抵消你所受到的伤害，能力等级越高，抵消伤害时消耗的玛那越少。",
+    "jp": "あなたが受けるダメージをマナで相殺します。能力レベルが高いほど、ダメージを相殺するために消費されるマナが少なくなります。",
+    "en": "Offset the damage you take with mana, the higher the ability level, the less mana is consumed when offsetting damage."
+  },
+  "stat.StMagicShield.name": {
+    "cn": "魔力护盾",
+    "jp": "マジックシールド",
+    "en": "Magic Shield"
+  },
+  "stat.StMagicShield.detail": {
+    "cn": "你感受到魔力护盾环绕自身。",
+    "jp": "あなたは魔力の盾が自分を包み込んでいるのを感じます。",
+    "en": "You feel the magic shield surrounding yourself."
+  }
+}
