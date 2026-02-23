@@ -3,7 +3,6 @@ using HarmonyLib;
 using NineTailFox.Impl.Stances;
 using NineTailFox.SourceDef.Abilities;
 using NineTailFox.SourceDef.Feats;
-using NineTailFox.SourceDef.Races;
 
 namespace NineTailFox.Patches;
 
@@ -37,7 +36,8 @@ public class CardPatcher
 
         var c = __instance.Chara;
 
-        if (c.race.id != RaceNineTailFox.Instance.id)
+        var feat = c.elements.GetElement(FeatNineTailFox.Instance.id);
+        if (feat == null)
             return;
 
         if (!__instance.HasCondition<StMagicShield>())
@@ -53,7 +53,7 @@ public class CardPatcher
 
         var lvl = ab.Value;
 
-        var mod = Math.Max(1, c.Evalue(FeatNineTailFox.Instance.id));
+        var mod = Math.Max(1, feat.Value);
 
         // lvl <= 1: 0.5 damage/mana
         // lvl = 50: 1.0 damage/mana
@@ -63,7 +63,7 @@ public class CardPatcher
             lvl >= 100 ? 2.0 :
             0.5 + (lvl - 1) * (1.5 / 99);
         damageReducePerMana *= 1 + mod * 0.09; // 每级mod增加9%效率
-        
+
         var manaToUse = Math.Max(1, (int)Math.Ceiling(dmg / damageReducePerMana));
         if (manaToUse > charMana)
             manaToUse = charMana;

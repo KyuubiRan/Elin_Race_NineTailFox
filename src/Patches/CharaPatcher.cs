@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using NineTailFox.SourceDef.Races;
+using NineTailFox.SourceDef.Feats;
 
 namespace NineTailFox.Patches;
 
@@ -16,7 +16,7 @@ internal class CharaPatcher
         if (!__instance.IsPC)
             return;
 
-        if (!RaceNineTailFox.PcRaceIsCurrent)
+        if (!__instance.HasElement(FeatNineTailFox.Instance.id))
             return;
 
         if (a is not Spell spell)

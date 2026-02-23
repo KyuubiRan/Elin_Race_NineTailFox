@@ -42,8 +42,9 @@ public abstract class BaseNTFElementRow : SourceElement.Row
         req = [];
         idTrainer = "";
         tagTrainer = "";
-        levelBonus = "";
-        levelBonus_JP = "";
+        _tLevelBonus = new TranslatedText($"element.{alias}.levelBonus", x => levelBonus = x);
+        levelBonus = _tLevelBonus.Value;
+        levelBonus_JP = _tLevelBonus.Value_JP;
         foodEffect = [];
         langAct = [];
         _tDetail = new TranslatedText($"element.{alias}.detail", x => detail = x);

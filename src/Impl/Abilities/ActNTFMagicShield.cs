@@ -1,5 +1,5 @@
 ﻿using NineTailFox.Impl.Stances;
-using NineTailFox.SourceDef.Races;
+using NineTailFox.SourceDef.Feats;
 
 namespace NineTailFox.Impl.Abilities;
 
@@ -9,10 +9,13 @@ public class ActNTFMagicShield : Ability
 
     public override bool Perform()
     {
-        if (TC?.Chara == null) return false;
-        if (!RaceNineTailFox.PcRaceIsCurrent) return false;
+        if (TC?.Chara == null) 
+            return false;
 
         var chara = TC.Chara;
+
+        if (!chara.HasElement(FeatNineTailFox.Instance.id)) 
+            return false;
 
 //         Plugin.Log.LogInfo(
 //             $"""

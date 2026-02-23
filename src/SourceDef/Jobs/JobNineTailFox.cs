@@ -27,7 +27,8 @@ public class JobNineTailFox : BaseNTFJobRow
 
             ENC.r_life, -27, // life bonus ratio
             ENC.r_mana, +33, // mana bonus ratio
-
+            ENC.meleeDistance, +1, // melee distance
+            
             FEAT.featManaBond, +3,
             FEAT.featManaPrecision, +3,
             FEAT.featFoxLearn, +3,

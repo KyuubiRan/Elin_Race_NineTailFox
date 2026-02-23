@@ -7,8 +7,6 @@ public class RaceNineTailFox : BaseNTFRaceRow
 {
     public static readonly RaceNineTailFox Instance = new();
 
-    public static bool PcRaceIsCurrent => EClass.pc?.race.id == Instance.id;
-
     public RaceNineTailFox() : base("RaceNineTailFox")
     {
         name = "★九尾狐";

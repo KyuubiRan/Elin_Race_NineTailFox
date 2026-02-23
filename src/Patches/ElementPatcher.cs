@@ -64,7 +64,8 @@ internal class ElementPatcher
         if (!c.IsPC)
             return;
 
-        if (c.race.id != RaceNineTailFox.Instance.id)
+        var feat = c.elements.GetElement(FeatNineTailFox.Instance.id);
+        if (feat == null)
             return;
 
         if (__instance is not Spell spell)
@@ -72,7 +73,8 @@ internal class ElementPatcher
 
         if (__result.type == Act.CostType.MP)
         {
-            var after = CalcCost(__result.cost, spell.vPotential + spell.Value / 9);
+            var mod = Math.Max(81, 90 - 9 * feat.Value);
+            var after = CalcCost(__result.cost, spell.vPotential + spell.Value / mod);
             // Plugin.LogInfo("Original MP Cost: " + __result.cost + ", After MP Cost: " + after + " Amount = " + spell.vPotential);
             __result.cost = after;
         }
@@ -88,7 +90,8 @@ internal class ElementPatcher
         if (c is not Chara chara)
             return;
 
-        if (chara.race.id != RaceNineTailFox.Instance.id)
+        var feat = chara.elements.GetElement(FeatNineTailFox.Instance.id);
+        if (feat == null)
             return;
 
         if (__instance is not Spell)
@@ -97,7 +100,7 @@ internal class ElementPatcher
         if (__result <= 0)
             return;
 
-        var mod = Math.Max(1, chara.Evalue(FeatNineTailFox.Instance.id)) * 0.11;
+        var mod = Math.Max(1, feat.Value) * 0.11;
         long r = __result;
         r += (long)(r * mod);
 

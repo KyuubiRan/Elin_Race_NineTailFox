@@ -64,9 +64,9 @@
     "jp": "あなたは魔力の盾が自分を包み込んでいるのを感じます。",
     "en": "You feel the magic shield surrounding yourself."
   },
-  "chat.NineTailFox.Religion.Punish": {
-    "cn": "惩罚被抵消了！",
-    "jp": "罰が相殺されました！",
-    "en": "The punishment has been offset!"
+  "chat.NineTailFox.Religion.ImmunePunish": {
+    "cn": "「九尾的加护」将神罚驱逐。",
+    "jp": "「九尾の加護」が神罰を追い払います。",
+    "en": "「Nine Tail's Blessing」 drives away the divine punishment."
   }
 }
