@@ -3,12 +3,11 @@
     <title>Race: Nine Tail Fox</title>
     <id>kyuubiran.NineTailFox.mod</id>
     <author>KyuubiRan</author>
-    <tags>QoL</tags>
+    <tags>Race</tags>
     <loadPriority>-99999</loadPriority>
     <version>0.23.267</version>
     <visibility>Public</visibility>
     <description>
         Add Nine Tail Fox Race to the game
-        为游戏添加九尾狐种族
     </description>
 </Meta>
