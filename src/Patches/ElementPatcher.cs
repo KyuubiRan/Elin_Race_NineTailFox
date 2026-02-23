@@ -97,7 +97,7 @@ internal class ElementPatcher
         if (__result <= 0)
             return;
 
-        var mod = Math.Max(1, chara.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 0) * 0.11;
+        var mod = Math.Max(1, chara.Evalue(FeatNineTailFox.Instance.id)) * 0.11;
         long r = __result;
         r += (long)(r * mod);
 

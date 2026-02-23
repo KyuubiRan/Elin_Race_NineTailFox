@@ -63,5 +63,10 @@
     "cn": "你感受到魔力护盾环绕自身。",
     "jp": "あなたは魔力の盾が自分を包み込んでいるのを感じます。",
     "en": "You feel the magic shield surrounding yourself."
+  },
+  "chat.NineTailFox.Religion.Punish": {
+    "cn": "惩罚被抵消了！",
+    "jp": "罰が相殺されました！",
+    "en": "The punishment has been offset!"
   }
 }

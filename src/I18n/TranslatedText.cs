@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 
 namespace NineTailFox.I18n;
 
@@ -6,7 +7,7 @@ public class TranslatedText
 {
     public string Key { get; private set; }
 
-    private Action<string> _onChanged;
+    [CanBeNull] private readonly Action<string> _onChanged;
 
     public string Value
     {
@@ -20,7 +21,7 @@ public class TranslatedText
 
     public string Value_JP { get; set; } = "";
 
-    public TranslatedText(string key, Action<string> onChanged)
+    public TranslatedText(string key, [CanBeNull] Action<string> onChanged = null)
     {
         Key = key;
         _onChanged = onChanged;

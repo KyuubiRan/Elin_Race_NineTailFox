@@ -53,7 +53,7 @@ public class CardPatcher
 
         var lvl = ab.Value;
 
-        var mod = Math.Max(1, c.elements.GetElement(FeatNineTailFox.Instance.id)?.Value ?? 1);
+        var mod = Math.Max(1, c.Evalue(FeatNineTailFox.Instance.id));
 
         // lvl <= 1: 0.5 damage/mana
         // lvl = 50: 1.0 damage/mana
