@@ -9,8 +9,6 @@ public class RaceNineTailFox : BaseNTFRaceRow
 
     public RaceNineTailFox() : base("RaceNineTailFox")
     {
-        name = "★九尾狐";
-        name_JP = "★九尾の狐";
         tag = ["god", "humanSpeak", "mofu"];
         life = 33;
         mana = 200;

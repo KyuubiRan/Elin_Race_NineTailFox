@@ -14,7 +14,7 @@ public class TranslatedText
         get;
         set
         {
-            field = value;
+            field = value ?? "";
             _onChanged?.Invoke(value);
         }
     } = "";

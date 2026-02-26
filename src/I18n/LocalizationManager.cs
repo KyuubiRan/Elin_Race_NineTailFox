@@ -35,10 +35,8 @@ public static class LocalizationManager
 
         var jp = texts["jp"];
         if (jp != null)
-        {
             text.Value_JP = jp.ToString();
-        }
-
+        
         var t = texts[lang];
         if (t == null)
         {

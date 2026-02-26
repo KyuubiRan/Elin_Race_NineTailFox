@@ -81,10 +81,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="src\Utils\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="assets\language.json" />
       <EmbeddedResource Include="assets\language.json" />
     </ItemGroup>
