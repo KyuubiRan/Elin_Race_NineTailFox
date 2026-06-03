@@ -32,6 +32,7 @@ public class JobNineTailFox : BaseNTFJobRow
             FEAT.featManaBond, +3,
             FEAT.featManaPrecision, +3,
             FEAT.featFoxLearn, +3,
+            FEAT.featWizard, +3,
             SKILL.negotiation, +9, // negotiation
             SKILL.weaponSword, +3, // sword
             SKILL.weaponStaff, +9, // staff
@@ -57,6 +58,13 @@ public class JobNineTailFox : BaseNTFJobRow
 
             SKILL.eleChaos,
             SKILL.eleEther,
+            
+            SKILL.eleAcid,
+            SKILL.eleCut,
+            SKILL.eleDarkness,
+            SKILL.eleNerve,
+            SKILL.eleImpact,
+            SKILL.elePoison,
 
             SKILL.eleFire,
             SKILL.eleCold,

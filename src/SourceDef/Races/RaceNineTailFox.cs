@@ -40,6 +40,7 @@ public class RaceNineTailFox : BaseNTFRaceRow
             FEAT.featManaBond, +6,
             FEAT.featManaPrecision, +6,
             FEAT.featFoxLearn, +6,
+            FEAT.featWizard, +6,
             SKILL.negotiation, +9, // negotiation
             SKILL.weaponSword, +6, // sword
             SKILL.weaponStaff, +9, // staff
