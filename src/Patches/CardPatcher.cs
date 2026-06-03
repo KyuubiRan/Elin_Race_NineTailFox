@@ -10,7 +10,8 @@ namespace NineTailFox.Patches;
 public class CardPatcher
 {
     [HarmonyPrefix]
-    [HarmonyPatch(nameof(Card.DamageHP),
+    [HarmonyPatch(
+        nameof(Card.DamageHP),
         typeof(long),
         typeof(int),
         typeof(int),
@@ -18,9 +19,11 @@ public class CardPatcher
         typeof(Card),
         typeof(bool),
         typeof(Thing),
-        typeof(Chara)
+        typeof(Chara),
+        typeof(int)
     )]
-    static void DamageHP_Prefix(Card __instance,
+    static void DamageHP_Prefix(
+        Card __instance,
         ref long dmg,
         int ele,
         int eleP,
@@ -28,7 +31,8 @@ public class CardPatcher
         Card origin,
         bool showEffect,
         Thing weapon,
-        Chara originalTarget
+        Chara originalTarget,
+        int resistPenetrationLevel
     )
     {
         if (!__instance.isChara || !__instance.IsPC)
@@ -64,11 +68,11 @@ public class CardPatcher
             0.5 + (lvl - 1) * (1.5 / 99);
         damageReducePerMana *= 1 + mod * 0.09; // 每级mod增加9%效率
 
-        var manaToUse = Math.Max(1, (int)Math.Ceiling(dmg / damageReducePerMana));
+        var manaToUse = Math.Max(1, (int) Math.Ceiling(dmg / damageReducePerMana));
         if (manaToUse > charMana)
             manaToUse = charMana;
 
-        var damageReduce = (long)(manaToUse * damageReducePerMana);
+        var damageReduce = (long) (manaToUse * damageReducePerMana);
         dmg -= damageReduce;
 
         c.mana.value -= manaToUse;
